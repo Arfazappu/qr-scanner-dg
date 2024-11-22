@@ -74,9 +74,9 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScanSuccess, onScanFailure }) =
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-
-      {!isScanning ? (
+    <div style={{ textAlign: "center" }}>
+        
+        {!isScanning ? (
         <button onClick={startScanner} disabled={!backCameraId}>
           Start Scan
         </button>
@@ -85,6 +85,8 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScanSuccess, onScanFailure }) =
       )}
 
       <div id="qr-reader"></div>
+
+      
 
       {result && (
         <div>

@@ -84,7 +84,7 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScanSuccess, onScanFailure }) =
         <button onClick={stopScanner}>Stop Scan</button>
       )}
 
-      <div id="qr-reader" style={{ width: "300px", margin: "20px auto" }}></div>
+      <div id="qr-reader"></div>
 
       {result && (
         <div>

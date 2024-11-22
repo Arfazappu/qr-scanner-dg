@@ -1,7 +1,7 @@
 "use client";
 
 import { Html5QrcodeScanner } from "html5-qrcode";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 interface QRScannerProps {
   onScanSuccess: (decodedText: string) => void;

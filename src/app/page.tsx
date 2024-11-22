@@ -7,7 +7,8 @@ const QRScannerPage = () => {
   };
 
   const handleScanFailure = (error: any) => {
-    console.error("Scanning failed:", error);
+    // console.error("Scanning failed:", error);
+    console.warn("QR Scan Error:", error);
   };
 
   return (

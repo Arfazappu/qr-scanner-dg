@@ -75,14 +75,14 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScanSuccess, onScanFailure }) =
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="relative text-center">
         
-        {isScanning ? (
+        {!isScanning ? (
         <button onClick={startScanner} disabled={!backCameraId} className="flex items-center justify-center mx-auto font-medium text-lg gap-1 bg-black text-white px-6 py-2">
           <ScanQrCode size={20} /> Scan
         </button>
       ) : (
-        <button onClick={stopScanner} className="bg-black/80 text-white rounded-full p-1 hover:bg-black/70 m-1 float-end"><X /></button>
+        <button onClick={stopScanner} className="absolute right-2 z-10 bg-black/80 text-white rounded-full p-1 hover:bg-black/70 m-1"><X /></button>
       )}
 
       <div id="qr-reader"></div>

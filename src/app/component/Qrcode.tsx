@@ -1,6 +1,7 @@
 "use client";
 
 import { Html5Qrcode } from "html5-qrcode";
+import { ScanQrCode, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 interface QRScannerProps {
@@ -76,12 +77,12 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScanSuccess, onScanFailure }) =
   return (
     <div style={{ textAlign: "center" }}>
         
-        {!isScanning ? (
-        <button onClick={startScanner} disabled={!backCameraId}>
-          Start Scan
+        {isScanning ? (
+        <button onClick={startScanner} disabled={!backCameraId} className="flex items-center justify-center mx-auto font-medium text-lg gap-1 bg-black text-white px-6 py-2">
+          <ScanQrCode size={20} /> Scan
         </button>
       ) : (
-        <button onClick={stopScanner}>Stop Scan</button>
+        <button onClick={stopScanner} className="bg-black/80 text-white rounded-full p-1 hover:bg-black/70 m-1 float-end"><X /></button>
       )}
 
       <div id="qr-reader"></div>
